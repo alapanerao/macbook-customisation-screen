@@ -18,3 +18,4 @@ Use this command to run tests and generate coverage report
 
 - Application is responsive and supports mobiles with SCREEN WIDTH < 300px as well.
 - Applicatoin is tested on Macbook Air Ratina 13 IN on Safari & Chrome.  Also tested on iPhone 12 & OnePlus 6T.
+- 5 test cases are implemented with 100% coverage in statements, branches, lines & 80% plus coverate in functions.
