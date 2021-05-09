@@ -12,26 +12,24 @@ const OptionCards = ({ cardData, selected, onCardClick, selectedOption, ...restP
             key={item.id}
             onClick={() => onCardClick(item)}
             selected={index === selectedOptionIndex}
+            data-testid={item.id}
           >
-            <Label>{item.displayText}</Label>
+            <Label data-testid={"card-label-" + item.id}>{item.displayText}</Label>
             {
               Number(item.additionalCost) > 0 && index < selectedOptionIndex &&
-              <PriceLabel>
-                {console.log("index < selectedOptionIndex")}
+              <PriceLabel data-testid={"card-price-label-" + item.id}>
                 - ₹ {item.additionalCost}
               </PriceLabel>
             }
             {
               Number(item.additionalCost) > 0 && index > selectedOptionIndex &&
-              <PriceLabel>
-                {console.log("index > selectedOptionIndex")}
+              <PriceLabel data-testid={"card-price-label-" + item.id}>
                 + ₹ {item.additionalCost}
               </PriceLabel>
             }
             {
               Number(item.additionalCost) === 0 && selectedOptionIndex > 0 &&
-              <PriceLabel>
-                {console.log("item.additionalCost === 0 ")}
+              <PriceLabel data-testid={"card-price-label-" + item.id}>
                 - ₹ {selectedOption.additionalCost}
               </PriceLabel>
             }

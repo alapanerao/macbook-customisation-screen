@@ -79,7 +79,7 @@ export const Home = () => {
         </ColumnContainer>
       </ContainerView>
       <FooterWrapper>
-        <PriceLabel>
+        <PriceLabel data-testid="final-price-label">
           {`From ₹${emiAmount}/mo. with EMI OR ₹${finalPrice}`}
         </PriceLabel>
       </FooterWrapper>
