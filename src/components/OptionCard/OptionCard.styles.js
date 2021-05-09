@@ -6,7 +6,7 @@ export const Container = styled.div`
     padding: .64706rem .82353rem;
     min-height: 4.88235rem;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     margin: 10px 0;
     &:hover {

@@ -18,7 +18,7 @@ const OptionCards = ({ cardData, selected, onCardClick, selectedOption, ...restP
             {
               Number(item.additionalCost) > 0 && index < selectedOptionIndex &&
               <PriceLabel data-testid={"card-price-label-" + item.id}>
-                - ₹ {item.additionalCost}
+                - ₹ {selectedOption.additionalCost - item.additionalCost}
               </PriceLabel>
             }
             {

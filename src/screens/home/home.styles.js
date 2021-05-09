@@ -8,6 +8,8 @@ export const ContainerView = styled.div`
   margin: auto;
   display: flex;
   flex-direction: row;
+  margin-top: 60px;
+  margin-bottom: 101px;
   @media (max-width: ${smallScreen}px) {
     flex-direction: column;
     justify-content: center;
@@ -16,7 +18,6 @@ export const ContainerView = styled.div`
 `;
 
 export const ColumnContainer = styled.div`
-  margin-top: 60px;
   width: 50%;
   max-width: 490px;
   float: left;
@@ -48,11 +49,16 @@ export const TitleLabel = styled.div`
   font-size: 32px;
   line-height: 1.125;
   font-weight: 500;
-  letter-spacing: .004em;
+  letter-spacing: .010em;
   font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
-  padding: 20px 35px 0 0;
+  padding: 20px 135px 0 0;
   text-align: left;
   color: #333;
+  @media (max-width: ${smallScreen}px) {
+    width: 100%;
+		height: auto;
+    padding: 20px 35px 0 0;
+  }
 `;
 
 export const DescriptionWrapper = styled.div`
@@ -90,6 +96,10 @@ export const FooterWrapper = styled.div`
   justify-content: flex-end;
   align-items: center;
   padding: 0 20px;
+  position: fixed;
+  bottom: 1px;
+  left: 1px;
+  right: 1px;
 `;
 
 export const PriceLabel = styled.div`
