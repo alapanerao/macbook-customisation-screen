@@ -15,7 +15,7 @@ export const Home = () => {
     processorList, memoryList, graphicsList, storageList, selectedDisplay, selectedKeyboard,
     state
   } = usePriceSelector();
-  const { selectedProcessor, selectedMemory, selectedGraphics, selectedStorage, finalPrice } = state;
+  const { selectedProcessor, selectedMemory, selectedGraphics, selectedStorage, finalPrice, emiAmount } = state;
 
   return (
     <>
@@ -80,7 +80,7 @@ export const Home = () => {
       </ContainerView>
       <FooterWrapper>
         <PriceLabel>
-          {finalPrice}
+          {`From ₹${emiAmount}/mo. with EMI OR ₹${finalPrice}`}
         </PriceLabel>
       </FooterWrapper>
     </>

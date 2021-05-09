@@ -98,4 +98,6 @@ export const PriceLabel = styled.div`
   letter-spacing: .009em;
   font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-weight: 600;
+  max-width: 380px;
+  text-align: right;
 `;

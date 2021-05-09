@@ -61,6 +61,11 @@ const selectedDisplay = "16-inch Retina display with True Tone";
 const selectedKeyboard = "Touch Bar and Touch ID Backlit Magic Keyboard - US English Logic Pro X"
 
 const usePriceSelector = () => {
+
+    const calculateInterest = (principalAmount) => {
+        return ((principalAmount + principalAmount * 0.13) / 12).toFixed(2)
+    }
+
     const [state, setState] = useState({
         selectedProcessor: processorList[0],
         selectedMemory: memoryList[0],
@@ -70,40 +75,50 @@ const usePriceSelector = () => {
         memoryPrice: 0,
         graphicsPrice: 0,
         storagePrice: 0,
-        finalPrice: 239900
+        finalPrice: 239900,
+        emiAmount: calculateInterest(239900)
     });
     const onClickProcessor = (data) => {
-        setState({ 
+        const finalPrice = 239900 + data.additionalCost + state.memoryPrice + state.graphicsPrice + state.storagePrice
+        setState({
             ...state,
             selectedProcessor: data,
             processorPrice: data.additionalCost,
-            finalPrice: 239900 + data.additionalCost + state.memoryPrice + state.graphicsPrice + state.storagePrice
+            finalPrice: finalPrice,
+            emiAmount: calculateInterest(finalPrice)
         });
     };
     const onClickMemory = (data) => {
-        setState({ 
+        const finalPrice = 239900 + state.processorPrice + data.additionalCost + state.graphicsPrice + state.storagePrice;
+        setState({
             ...state,
             selectedMemory: data,
             memoryPrice: data.additionalCost,
-            finalPrice: 239900 + state.processorPrice + data.additionalCost + state.graphicsPrice + state.storagePrice
+            finalPrice: finalPrice,
+            emiAmount: calculateInterest(finalPrice)
         });
     };
     const onClickGraphics = (data) => {
-        setState({ 
+        const finalPrice = 239900 + state.processorPrice + state.memoryPrice + data.additionalCost + state.storagePrice;
+        setState({
             ...state,
             selectedGraphics: data,
             graphicsPrice: data.additionalCost,
-            finalPrice: 239900 + state.processorPrice + state.memoryPrice + data.additionalCost + state.storagePrice
+            finalPrice: finalPrice,
+            emiAmount: calculateInterest(finalPrice)
         });
     };
     const onClickStorage = (data) => {
-        setState({ 
+        const finalPrice = 239900 + state.processorPrice + state.memoryPrice + state.graphicsPrice + data.additionalCost;
+        setState({
             ...state,
             selectedStorage: data,
             storagePrice: data.additionalCost,
-            finalPrice: 239900 + state.processorPrice + state.memoryPrice + state.graphicsPrice + data.additionalCost
+            finalPrice: finalPrice,
+            emiAmount: calculateInterest(finalPrice)
         });
     };
+
     return {
         onClickProcessor, onClickMemory, onClickGraphics, onClickStorage,
         processorList, memoryList, graphicsList, storageList, selectedDisplay, selectedKeyboard,
