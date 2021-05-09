@@ -4,19 +4,22 @@ const smallScreen = 735;
 
 // background-color: #bcbcbc;
 export const ContainerView = styled.div`
-  width: 85%;
+  width: 90%;
   max-width: 980px;
   margin: auto;
   display: flex;
   flex-direction: row;
   @media (max-width: ${smallScreen}px) {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
 export const ColumnContainer = styled.div`
   margin-top: 60px;
   width: 50%;
+  max-width: 490px;
   float: left;
   @media (max-width: ${smallScreen}px) {
     width: 100%;
@@ -26,7 +29,6 @@ export const ColumnContainer = styled.div`
 
 // background-color: blue;
 export const Column = styled.div`
-  display: block;
   text-align: center;
   margin-bottom: 20px;
   @media (max-width: ${smallScreen}px) {
@@ -35,7 +37,7 @@ export const Column = styled.div`
 `;
 
 export const MacbookImage = styled.img`
-  width: 410px;
+  width: 85%;
   height: auto;
   float: left;
   @media (max-width: ${smallScreen}px) {
