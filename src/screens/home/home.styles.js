@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 const smallScreen = 735;
 
-// background-color: #bcbcbc;
 export const ContainerView = styled.div`
   width: 90%;
   max-width: 980px;
@@ -27,7 +26,6 @@ export const ColumnContainer = styled.div`
   }
 `;
 
-// background-color: blue;
 export const Column = styled.div`
   text-align: center;
   margin-bottom: 20px;
@@ -80,4 +78,24 @@ export const ConfigurationTitle = styled.div`
   font-weight: 600;
   letter-spacing: -.021em;
   margin-top: 22px;
+`;
+
+export const FooterWrapper = styled.div`
+  max-width: 980px;
+  height: 81px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
+`;
+
+export const PriceLabel = styled.div`
+  font-size: 24px;
+  line-height: 1.16667;
+  letter-spacing: .009em;
+  font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 600;
 `;

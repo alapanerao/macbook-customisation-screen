@@ -6,7 +6,7 @@ export const Container = styled.div`
     padding: .64706rem .82353rem;
     min-height: 4.88235rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 10px 0;
     &:hover {
@@ -17,12 +17,10 @@ export const Container = styled.div`
 export const Label = styled.div`
     width: 60%;
     font-weight: 600;
-    float: left;
     text-align: left;
 `;
 
 export const PriceLabel = styled.div`
     width: 34%;
     text-align: right;
-    float: left;
 `;

@@ -66,31 +66,42 @@ const usePriceSelector = () => {
         selectedMemory: memoryList[0],
         selectedGraphics: graphicsList[0],
         selectedStorage: storageList[0],
+        processorPrice: 0,
+        memoryPrice: 0,
+        graphicsPrice: 0,
+        storagePrice: 0,
         finalPrice: 239900
     });
     const onClickProcessor = (data) => {
-        console.log("Processor Selected :: ", data);
         setState({ 
             ...state,
             selectedProcessor: data,
+            processorPrice: data.additionalCost,
+            finalPrice: 239900 + data.additionalCost + state.memoryPrice + state.graphicsPrice + state.storagePrice
         });
     };
     const onClickMemory = (data) => {
         setState({ 
             ...state,
-            selectedMemory: data
+            selectedMemory: data,
+            memoryPrice: data.additionalCost,
+            finalPrice: 239900 + state.processorPrice + data.additionalCost + state.graphicsPrice + state.storagePrice
         });
     };
     const onClickGraphics = (data) => {
         setState({ 
             ...state,
-            selectedGraphics: data
+            selectedGraphics: data,
+            graphicsPrice: data.additionalCost,
+            finalPrice: 239900 + state.processorPrice + state.memoryPrice + data.additionalCost + state.storagePrice
         });
     };
     const onClickStorage = (data) => {
         setState({ 
             ...state,
-            selectedStorage: data
+            selectedStorage: data,
+            storagePrice: data.additionalCost,
+            finalPrice: 239900 + state.processorPrice + state.memoryPrice + state.graphicsPrice + data.additionalCost
         });
     };
     return {
